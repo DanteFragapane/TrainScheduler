@@ -22,7 +22,7 @@ const nextArrival = function nextArrival (time, frequency) {
 const createRow = function createRow (name, destination, time, frequency) {
   const row = $('<tr>')
   const next = nextArrival(time, frequency)
-  const minAway = moment(new Date(), 'HH:mm').diff(next, 'minutes')
+  const minAway = moment(next, 'HH:mm').diff(moment(new Date(), 'HH:mm'), 'minutes')
   console.log(next)
   console.log(minAway)
 
